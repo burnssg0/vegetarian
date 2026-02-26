@@ -1,0 +1,16 @@
+---
+title: "index.rmd"
+author: "Sarah Grace Burns"
+date: "`r Sys.Date()`"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(flexdashboard)
+library(knitr)
+library(dplyr)
+```
+
