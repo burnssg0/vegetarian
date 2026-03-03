@@ -1,6 +1,6 @@
 # vegetarian
 
-[**Is Going Vegetarian Worth It?**](https://burnssg0.github.io/vegetarian/)
+[Is Going Vegetarian Worth It?](https://burnssg0.github.io/vegetarian/)
 
 *The hidden environmental impacts behind what we eat.*
 
