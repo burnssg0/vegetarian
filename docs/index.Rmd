@@ -34,13 +34,9 @@ library(ggpomological)
 
 ## Column {data-width=600}
 
-&nbsp;
-
 <b><font face size="10em" color = "#789163">Is Going Vegetarian Worth It?</font></b>
 
 <b><font face size="5em" color = "#90ad78">The hidden environmental impacts behind what we eat.</font></b>
-
-&nbsp;
 
 <font face size="4em"> It is hard to escape the problems our world faces. You don’t have to look far to see how our actions are cutting deep into the natural processes of our planet. Even when we aren’t searching for it, our teachers, peers, and the news remind us how the world is hurting and how we are part of the problem. Our generation has come of age alongside climate change. Perhaps this reflects present bias; however, as young adults, we are directly experiencing and feeling the detrimental effects of climate change as they become increasingly visible, recognized, and understood. “Global warming,” “sea level rise,” “carbon emissions,” “greenhouse effect,” “fossil fuels,” “pollution”—the list goes on—have been familiar words since grade school. Since we could talk, we have been spoon-fed solutions: turn the water off when you brush your teeth, "keep calm and don't litter." We recycle and turn out the lights, yet we still watch the world crumble before our eyes. The prolonged and consistent saturation of information we receive can make us apathetic, indifferent, detached, and unconcerned, even while we call ourselves environmentalists. 
 
