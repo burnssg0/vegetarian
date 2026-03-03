@@ -615,7 +615,7 @@ Column {.tabset}
    
 ### Swap Meat Type 
 
-100 grams of Protein is about 5 hamburgers. 
+Now, imagine eating five chicken sandwiches instead of five hamburgers. You can see how this change dramatically changes your carbon footprint. 
 
 ```{r}
 url <-'https://ourworldindata.org/explorers/food-footprints.csv?v=1&csvType=full&useColumnShortNames=true&Commodity+or+Specific+Food+Product=Commodity&Environmental+Impact=Carbon+footprint&Kilogram+%2F+Protein+%2F+Calories=Per+100+grams+of+protein&By+stage+of+supply+chain=false'
@@ -640,6 +640,8 @@ fill = 'Food Commodities')
  
 ### vegetarian 
 
+Now, imagine eating tofu instead of five hamburgers. You can see how this change dramatically changes your carbon footprint. 
+
 ```{r}
 url <-'https://ourworldindata.org/explorers/food-footprints.csv?v=1&csvType=full&useColumnShortNames=true&Commodity+or+Specific+Food+Product=Commodity&Environmental+Impact=Carbon+footprint&Kilogram+%2F+Protein+%2F+Calories=Per+100+grams+of+protein&By+stage+of+supply+chain=false'
 pro <- read_csv(url) %>% 
@@ -661,7 +663,10 @@ fill = 'Food Commodities')
 
 ``` 
 
-### vegetarian 
+### vegetarian
+
+Now, imagine eating beans instead of five hamburgers. You can see how this change dramatically changes your carbon footprint. 
+
 
 ```{r}
 url <-'https://ourworldindata.org/explorers/food-footprints.csv?v=1&csvType=full&useColumnShortNames=true&Commodity+or+Specific+Food+Product=Commodity&Environmental+Impact=Carbon+footprint&Kilogram+%2F+Protein+%2F+Calories=Per+100+grams+of+protein&By+stage+of+supply+chain=false'
