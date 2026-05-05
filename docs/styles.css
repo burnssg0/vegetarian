@@ -1,0 +1,17 @@
+body {
+  padding: 35px;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
+.container-fluid {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.main-container {
+  padding: 25px 40px;
+}

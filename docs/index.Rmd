@@ -6,6 +6,7 @@ date: "`r Sys.Date()`"
 output: 
   flexdashboard::flex_dashboard:
     orientation: column
+    css: styles.css
 editor_options: 
   chunk_output_type: console
 ---
@@ -25,6 +26,7 @@ library(ggpubr)
 library(bbplot)
 library(ggpomological)
 ```
+
 
 <style type="text/css"> body {font-size: 15px} </style>
 
@@ -210,7 +212,7 @@ diet <- read_csv(url) %>%
                                                   'sugar', 
                                                   'cereals_and_grains', 
                                                   'oils_and_fats')))
-  
+
 ggplot(diet, 
        aes(y = food_type,
            x = kcal,
@@ -248,6 +250,8 @@ These graphs show that **meat**, specifically **beef**, has the greatest impact 
 url <- 'https://ourworldindata.org/explorers/food-footprints.csv?v=1&csvType=full&useColumnShortNames=true&Commodity+or+Specific+Food+Product=Commodity&Environmental+Impact=Carbon+footprint&Kilogram+%2F+Protein+%2F+Calories=Per+kilogram&By+stage+of+supply+chain=false&hideControls=false'
 co2_crop <- read_csv(url)
 
+co2_crop %>% head
+
 sugar <- c('Beet Sugar','Cane Sugar')
 
 oils_and_fats <- c("Nuts", "Groundnuts")
@@ -283,9 +287,9 @@ mutate(food_cat = case_when(`entity` %in% sugar ~ 'sugar',       ###############
                                                 'sugar',
                                                 'cereals_and_grains',
                                                 'oils_and_fats'))) %>%
-  mutate(greenhouse_gas_emissions_per_kilogram = greenhouse_gas_emissions_per_kilogram/10) %>% 
+  mutate(ghg_emissions_per_kilogram__poore__and__nemecek__2018 = ghg_emissions_per_kilogram__poore__and__nemecek__2018/10) %>% 
   group_by(food_cat) %>% 
-  summarize(group_tot = sum(greenhouse_gas_emissions_per_kilogram))
+  summarize(group_tot = sum(ghg_emissions_per_kilogram__poore__and__nemecek__2018))
   
 
 ggplot(food_groups, 
@@ -357,7 +361,7 @@ mutate(food_cat = case_when(`entity` %in% sugar ~ 'sugar',       ###############
 
 ggplot(co2_crop, 
        aes(y = entity, 
-           x = greenhouse_gas_emissions_per_kilogram,
+           x = ghg_emissions_per_kilogram__poore__and__nemecek__2018,
            group = food_cat, 
            fill = food_cat)) +
   geom_col()+
@@ -377,6 +381,8 @@ ggplotly()
 ```{r}
 url <- 'https://ourworldindata.org/explorers/food-footprints.csv?v=1&csvType=full&useColumnShortNames=true&Commodity+or+Specific+Food+Product=Commodity&Environmental+Impact=Land+use&Kilogram+%2F+Protein+%2F+Calories=Per+kilogram&By+stage+of+supply+chain=false'
 land_crop <- read_csv(url)
+
+land_crop %>% head
 
 sugar <- c('Beet Sugar','Cane Sugar')
 
@@ -414,7 +420,7 @@ mutate(food_cat = case_when(`entity` %in% sugar ~ 'sugar',
                                                 'cereals_and_grains',
                                                 'oils_and_fats'))) %>%
   group_by(food_cat) %>% 
-  summarize(group_tot = sum(land_use_per_kilogram))
+  summarize(group_tot = sum(land_use_per_kilogram__poore__and__nemecek__2018))
 
 ggplot(food_groups, 
        aes(y = food_cat, 
@@ -482,7 +488,7 @@ mutate(food_cat = case_when(`entity` %in% sugar ~ 'sugar',       ###############
 
 ggplot(land_crop, 
        aes(y = entity, 
-           x = land_use_per_kilogram, 
+           x = land_use_per_kilogram__poore__and__nemecek__2018, 
            fill = food_cat)) +
   geom_col()+
   theme_pomological_plain()+
@@ -595,9 +601,11 @@ url <-'https://ourworldindata.org/explorers/food-footprints.csv?v=1&csvType=full
 pro <- read_csv(url) %>% 
   filter(entity %in% c("Beef (beef herd)", "Lamb & Mutton", "Pig Meat", "Poultry Meat", "Tofu", "Other Pulses"))%>% 
   mutate(entity = factor(entity, levels = c("Other Pulses", "Tofu", "Poultry Meat", "Pig Meat", "Lamb & Mutton", "Beef (beef herd)")))
+
+pro %>% head
  
 ggplot(pro, 
-       aes(x = greenhouse_gas_emissions_per_100g_protein,
+       aes(x = ghg_emissions_per_100g_protein__poore__and__nemecek__2018,
            y = entity,
            fill= entity))+
   geom_col()+
@@ -624,7 +632,7 @@ pro <- read_csv(url) %>%
   mutate(entity = factor(entity, levels = c("Other Pulses", "Tofu", "Poultry Meat", "Pig Meat", "Lamb & Mutton", "Beef (beef herd)")))
  
 ggplot(pro, 
-       aes(x = greenhouse_gas_emissions_per_100g_protein,
+       aes(x = ghg_emissions_per_100g_protein__poore__and__nemecek__2018,
            y = entity,
            fill= entity))+
   geom_col()+
@@ -649,7 +657,7 @@ pro <- read_csv(url) %>%
   mutate(entity = factor(entity, levels = c("Other Pulses", "Tofu", "Poultry Meat", "Pig Meat", "Lamb & Mutton", "Beef (beef herd)")))
  
 ggplot(pro, 
-       aes(x = greenhouse_gas_emissions_per_100g_protein,
+       aes(x = ghg_emissions_per_100g_protein__poore__and__nemecek__2018,
            y = entity,
            fill= entity))+
   geom_col()+
@@ -675,7 +683,7 @@ pro <- read_csv(url) %>%
   mutate(entity = factor(entity, levels = c("Other Pulses", "Tofu", "Poultry Meat", "Pig Meat", "Lamb & Mutton", "Beef (beef herd)")))
  
 ggplot(pro, 
-       aes(x = greenhouse_gas_emissions_per_100g_protein,
+       aes(x = ghg_emissions_per_100g_protein__poore__and__nemecek__2018,
            y = entity,
            fill= entity))+
   geom_col()+
